@@ -282,7 +282,7 @@ class DP_Invoice {
     $this->markAsPaid();
     $this->order->add_order_note(
       sprintf(
-        esc_html__("Order OverPaid by [%s] Dash", 'dashpay-woocommerce'),
+        esc_html__("Order OverPaid by [%s]", 'dashpay-woocommerce'),
             $this->remainingBalance() * -1
       )
     );

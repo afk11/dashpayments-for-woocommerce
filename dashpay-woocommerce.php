@@ -63,7 +63,7 @@ final class DashPayments {
      * @since 0.0.1
      */
     private static $required_extensions = array(
-        'gmp', 'bcmath', 'mcrypt', 'json', 'curl', 'openssl', 'gd'
+        'gmp', 'bcmath', 'json', 'curl', 'openssl', 'gd'
     );
 
     /**
@@ -254,9 +254,10 @@ final class DashPayments {
       }
 
       // Valid gateways that this plugin enables
-      $enabled_gateways = array('dash');
+      $enabled_gateways = array('dash', 'bitcoin');
 
       $gateway_classes['dash'] = require_once(dirname(DP_PLUGIN_FILE) . '/includes/gateways/class-wc-gateway-dashpay.php');
+      $gateway_classes['bitcoin'] = require_once(dirname(DP_PLUGIN_FILE) . '/includes/gateways/class-wc-gateway-bitcoin.php');
 
       // Hook payment gateway into WooCommerce
       foreach ( $enabled_gateways as $gateway ) {
