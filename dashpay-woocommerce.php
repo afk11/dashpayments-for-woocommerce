@@ -256,6 +256,7 @@ final class DashPayments {
       // Valid gateways that this plugin enables
       $enabled_gateways = array('dash', 'bitcoin');
 
+      require_once(dirname(DP_PLUGIN_FILE) . '/includes/gateways/class-wc-gateway-base.php');
       $gateway_classes['dash'] = require_once(dirname(DP_PLUGIN_FILE) . '/includes/gateways/class-wc-gateway-dashpay.php');
       $gateway_classes['bitcoin'] = require_once(dirname(DP_PLUGIN_FILE) . '/includes/gateways/class-wc-gateway-bitcoin.php');
 

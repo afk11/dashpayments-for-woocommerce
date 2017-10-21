@@ -6,6 +6,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 class DP_Insight_API {
 
+  private static $checkNodeWarnings = false;
+
   public $insight_server_url;
 
   public function __construct( $insight_server_url ) {
@@ -54,9 +56,11 @@ class DP_Insight_API {
     }
 
     // verify network status
-    if ( "" !== $network_status->info->errors ) {
+    if (self::$checkNodeWarnings) {
+      if ( "" !== $network_status->info->errors ) {
       // throw new Exception("Insight API status error.");
-      return false;
+        return false;
+      }
     }
 
     // verify Insight-API sync status
