@@ -171,6 +171,8 @@ class DP_Invoice {
 
         $template_file = 'payment-instructions.html.twig';
         $template_vars = array(
+            'payment_currency' => $this->paymentCurrency,
+            'payment_urn' => strtolower($this->paymentCurrency) . ':' . $this->address . '?amount=' . $this->remainingBalance(),
             'payment_amount' => $this->remainingBalance(),
             'payment_address' => $this->address,
             'qr_code_url' => $this->get_qr_payment_code_img_url(),

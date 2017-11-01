@@ -21,7 +21,7 @@ if ( ! class_exists( 'WC_Gateway_Bitcoin' ) ) :
         protected static $currency = 'Bitcoin';
         protected static $currencyDesc = '<a href="https://www.bitcoin.org/" target="_blank">Bitcoin</a> is a peer-to-peer, decentralized digital currency that enables instant payments from anyone to anyone, anywhere in the world.';
         protected static $currencyUrl = 'https://bitcoin.org';
-        protected static $iconPath = '/assets/images/dash-32x.png';
+        protected static $iconPath = '/assets/images/bitcoin-32x.png';
         protected static $defaultInsight = 'https://insight.bitpay.com';
         protected static $walletUrl = 'https://electrum.org';
         protected static $walletTitle = 'Electrum Wallet';

@@ -10,7 +10,7 @@
     {% endfor %}
   </ul>
 
-  This store requires that transactions have {{ required_confirmations }} confirmations on the Dash network before being processed. Once this number has been reached, payment will be confirmed.
+  This store requires that transactions have {{ required_confirmations }} confirmations on the {{ payment_currency }} network before being processed. Once this number has been reached, payment will be confirmed.
 </div>
 {% endif %}
 
@@ -20,7 +20,7 @@
 </tr>
 <tr>
   <td colspan="1" style="vertical-align:middle;">
-  Amount <strong>Dash</strong>:
+  Amount <strong>{{ payment_currency }}</strong>:
   </td>
   <td colspan="3">
     <div style="border:1px solid #FCCA09;padding:2px 6px;margin:2px;background-color:#FCF8E3;border-radius:4px;color:#CC0000;font-weight: bold;font-size: 120%;">
@@ -44,7 +44,7 @@
 </td>
 <td colspan="3">
   <div style="border:1px solid #FCCA09;padding:5px;margin:2px;background-color:#FCF8E3;border-radius:4px;">
-    <a href="dash:{{ payment_address }}?amount={{ payment_amount }}">
+    <a href="{{ payment_urn }}">
     <img src="{{ qr_code_url }}" alt="" title="" style="vertical-align:middle;border:1px solid #888;">
     </a>
   </div>
